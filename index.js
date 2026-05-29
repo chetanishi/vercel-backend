@@ -38,6 +38,13 @@ app.use(
 app.use(express.json());
 
 
+app.post("/test", (req, res) => {
+  res.json({
+    success: true,
+    message: "POST route working"
+  });
+});
+
 
 // ROUTES
 
