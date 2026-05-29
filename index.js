@@ -28,7 +28,12 @@ const app = express();
 
 // MIDDLEWARE
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://vercel-frontend-lovat-ten.vercel.app",
+    credentials: true,
+  })
+);
 
 app.use(express.json());
 
