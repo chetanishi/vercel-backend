@@ -45,10 +45,10 @@ app.post("/test", (req, res) => {
   });
 });
 
-app.get("/debug", (req, res) => {
+app.post("/check", (req, res) => {
   res.json({
-    mongoUriExists: !!process.env.MONGO_URI,
-    jwtSecretExists: !!process.env.JWT_SECRET,
+    success: true,
+    message: "POST working"
   });
 });
 
