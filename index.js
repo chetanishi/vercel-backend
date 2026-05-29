@@ -45,6 +45,13 @@ app.post("/test", (req, res) => {
   });
 });
 
+app.get("/debug", (req, res) => {
+  res.json({
+    mongoUriExists: !!process.env.MONGO_URI,
+    jwtSecretExists: !!process.env.JWT_SECRET,
+  });
+});
+
 
 // ROUTES
 
