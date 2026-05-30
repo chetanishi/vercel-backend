@@ -118,14 +118,15 @@ const loginUser = async (req, res) => {
             user
         });
 
-    } catch (error) {
+    } 
+   catch (error) {
+    console.log("LOGIN ERROR =>", error);
 
-        res.status(500).json({
-            success: false,
-            message: "Server Error"
-        });
-
-    }
+    res.status(500).json({
+        success: false,
+        message: error.message
+    });
+}
 
 };
 
