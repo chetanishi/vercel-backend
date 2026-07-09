@@ -2,6 +2,8 @@ const express = require("express");
 
 const cors = require("cors");
 
+const path = require("path");
+
 const dotenv = require("dotenv");
 
 const connectDB = require("./config/db");
@@ -37,7 +39,10 @@ app.use(
 
 app.use(express.json());
 
-app.use("/uploads", express.static("uploads"));
+app.use(
+    "/uploads",
+    express.static(path.join(__dirname, "uploads")));
+
 app.post("/test", (req, res) => {
   res.json({
     success: true,
