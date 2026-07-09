@@ -37,7 +37,7 @@ app.use(
 
 app.use(express.json());
 
-
+app.use("/uploads", express.static("uploads"));
 app.post("/test", (req, res) => {
   res.json({
     success: true,
@@ -63,6 +63,8 @@ app.post("/check", (req, res) => {
 // ROUTES
 
 app.use("/", require("./routes/authRoutes"));
+
+app.use("/api/products", require("./routes/productRoutes"));
 
 app.get("/", (req,resp)=> {
     resp.send("Server is running");
